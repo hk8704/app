@@ -21,12 +21,12 @@ spec:
           image: admin02.azurecr.io/app:latest
           ports:
             - containerPort: 8080
-          env:
-            - name: configurl
-              valueFrom:
-                configMapKeyRef:
-                  name: apiurl
-                  key: url
+ #         env:
+ #           - name: configurl
+ #             valueFrom:
+ #               configMapKeyRef:
+ #                 name: apiurl
+ #                 key: url
           readinessProbe:
             httpGet:
               path: '/actuator/health'

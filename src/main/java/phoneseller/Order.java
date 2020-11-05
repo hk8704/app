@@ -54,14 +54,15 @@ public class Order {
 
     @PostUpdate
     public void onPostUpdate(){
+        System.out.println("cancel1");
         if("cancel".equals(status)){
-
+            System.out.println("cancel2");
             this.setStatus("OrderCancelled");
             OrderCancelled orderCancelled = new OrderCancelled();
             BeanUtils.copyProperties(this, orderCancelled);
             orderCancelled.publish();
         }
-
+        System.out.println("cancel3");
     }
 
 
